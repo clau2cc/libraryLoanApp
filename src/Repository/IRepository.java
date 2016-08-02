@@ -15,14 +15,14 @@ import Models.*;
  */
 public interface IRepository
 {
-	public void AddAuthor();
-	public void AddBook();
-	public void AddBorrower();
-	public void BookLoan();
+	public int AddAuthor(Author author);
+	public int AddBook(Book book);
+	public void AddBorrower(Borrower borrower);
+	public void BookLoan(BookLoan bookLoan);
 	public List<Book> GetAllBooks();
-	public List<Book> GetBooksByStatus();
-	public List<Book> GetBooksBySubject();
+	public List<Book> GetBooksByStatus(boolean status);
+	public List<Book> GetBooksBySubject(String subject);
 	public List<Borrower> GetAllBorrowers();
-	public List<Borrower> GetBorrowersByStatus();
+	public List<Borrower> GetBorrowersByStatus(boolean status);
 	public List<BookLoan> GetAllLoans();
 }

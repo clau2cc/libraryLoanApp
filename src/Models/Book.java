@@ -15,9 +15,15 @@ public class Book
 	private int bookID;
 	private String title;
 	private String isbn;
+	
+	/**this we should change so we don't need to do validation later. it should be a char,
+	 *  in the db is a 3 three char field but according to bill's description 
+	 *  is going to be just 1 or 2 or 3 so a char is going to work */
 	private String editionNumber;
 	private String subject;
-	private boolean Available;
+	
+	/**kyle i changed this because in the db is an int, mysql doesn't support boolean**/
+	private int available;
 	
 	/**
 	 * @return the title
@@ -78,16 +84,16 @@ public class Book
 	/**
 	 * @return the available
 	 */
-	public boolean isAvailable()
+	public int getAvailable()
 	{
-		return Available;
+		return available;
 	}
 	/**
 	 * @param available the available to set
 	 */
-	public void setAvailable(boolean available)
+	public void setAvailable(int av)
 	{
-		Available = available;
+		available = av;
 	}
 	/**
 	 * @return the bookID
